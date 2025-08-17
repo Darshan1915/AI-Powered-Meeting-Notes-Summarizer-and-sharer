@@ -19,11 +19,11 @@ function App() {
     reader.readAsText(file);
   };
 
-
+  const backend_url =  "https://ai-powered-meeting-notes-summarizer-and-hsll.onrender.com/"
 
 const handleSummarize = async () => {
   try {
-    const res = await axios.post("http://localhost:5000/api/summarize", {
+    const res = await axios.post(backend_url+"api/summarize", {
       transcript,
       prompt,
     });
@@ -42,7 +42,7 @@ const handleSummarize = async () => {
 
 const handleSendEmail = async () => {
   try {
-    const res = await axios.post("http://localhost:5000/api/send-email", {
+    const res = await axios.post(backend_url+"api/send-email", {
       summary,
       recipients,
     });
