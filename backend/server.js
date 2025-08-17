@@ -37,7 +37,7 @@ app.post("/api/summarize", async (req, res) => {
     const data = await groqResponse.json();
 
     const summary = data?.choices?.[0]?.message?.content || "No summary generated.";
-    console.log("Extracted summary:", summary);
+    // console.log("Extracted summary:", summary);
 
     res.json({
       success: true,
